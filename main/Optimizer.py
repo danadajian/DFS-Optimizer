@@ -1,7 +1,7 @@
 from itertools import combinations as comb
-from compilestats import *
-from getsalaries import *
-from emailresults import send_email
+from main.CompileStats import *
+from main.GetSalaries import *
+from main.EmailResults import send_email
 
 
 def get_total(players, data):
