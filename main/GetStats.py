@@ -61,7 +61,7 @@ for week in range(weeks):
         # make http request to ESPN for full page html
         playerSession = requests.session()
         playerUrl = 'http://games.espn.com/ffl/leaders?&scoringPeriodId=' + str(
-            week + 1) + '&seasonId=2018&startIndex=' + str(playerCount)
+            week + 1) + '&seasonId=2019&startIndex=' + str(playerCount)
         playerReq = playerSession.get(playerUrl)
         playerDoc = BeautifulSoup(playerReq.content, 'html.parser')
         playerText = str(playerDoc.get_text)

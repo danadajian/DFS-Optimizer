@@ -66,12 +66,10 @@ def optimize(score_dict, salary_dict):
 lineupResults = ''
 for playerSalaries in siteSalaries:
     if playerSalaries:
-        pointsPercentile = round(0.50 * len(sortedScores))
+        pointsPercentile = round(len(sortedScores) / 2)
         pointsThreshold = overallPlayerScoresDict.get(sortedScores[pointsPercentile])
-        playerLineupList = []
-        for player, score in overallPlayerScoresDict.items():
-            if player in playerSalaries.keys() and score > pointsThreshold:
-                playerLineupList.append(player)
+        playerLineupList = [player for player, score in overallPlayerScoresDict.items() if
+                            player in playerSalaries.keys() and score > pointsThreshold]
 
         playerQBList = [player for player in playerLineupList if positionDict.get(player) == 'QB']
         playerRBList = [player for player in playerLineupList if positionDict.get(player) == 'RB']
