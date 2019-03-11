@@ -14,6 +14,6 @@ def send_email(from_addr, to_addr_list, cc_addr_list,
     server = smtplib.SMTP(smtp_server)
     server.starttls()
     server.login(login, password)
-    problems = server.sendmail(from_addr, to_addr_list, message)
+    email = server.sendmail(from_addr, to_addr_list, message)
     server.quit()
-    return problems
+    return email
